@@ -20,6 +20,10 @@ function Landing() {
   const phraseRefs = useRef([]);
 
   useEffect(() => {
+    // Skip carousel animation on mobile devices (768px and below)
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) return;
+
     const updateOpacities = () => {
       if (!scrollContainerRef.current) return;
 
@@ -431,15 +435,13 @@ function Landing() {
       {/* Footer */}
       <footer className="footer-section">
         <div className="footer-container">
-          <div className="footer-left">
+          <div className="footer-top">
             <div className="footer-logo-wrapper">
               <img src="/vamo-logo-gray.svg" alt="Vamo Fellowship" className="footer-logo-img" />
             </div>
-            <p className="footer-copyright">© 2025 BeWanted, Inc. All rights reserved.</p>
-          </div>
-          <div className="footer-right">
             <a href="https://prcphuf5zmd.typeform.com/to/lAnbVfCL?typeform-source=www.pineapplefellowship.com" target="_blank" rel="noopener noreferrer" className="btn-apply-footer">Apply now</a>
           </div>
+          <p className="footer-copyright">© 2025 BeWanted, Inc. All rights reserved.</p>
         </div>
       </footer>
     </div>
