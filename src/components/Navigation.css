@@ -1,0 +1,210 @@
+/* Navigation Header */
+.nav-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 1000;
+  height: 70px;
+}
+
+.nav-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-img {
+  height: 32px;
+  width: auto;
+}
+
+/* Desktop Navigation */
+.nav-desktop {
+  display: none;
+  gap: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  opacity: 0.6;
+}
+
+.nav-link-active {
+  font-weight: 500;
+}
+
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #000;
+}
+
+/* Apply Button */
+.nav-apply-btn {
+  background: #000;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.nav-apply-btn:hover {
+  background: #333;
+}
+
+/* Mobile Menu Button */
+.nav-menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.nav-menu-icon {
+  width: 100%;
+  height: 2px;
+  background: #000;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.nav-menu-btn-open .nav-menu-icon:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-menu-btn-open .nav-menu-icon:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-menu-btn-open .nav-menu-icon:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Side Menu Overlay */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 998;
+}
+
+.nav-overlay-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Side Menu */
+.nav-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-mobile-open {
+  transform: translateX(0);
+}
+
+.nav-mobile-content {
+  padding: 100px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.nav-mobile-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s ease;
+}
+
+.nav-mobile-link:hover {
+  opacity: 0.6;
+}
+
+.nav-mobile-link-active {
+  font-weight: 600;
+}
+
+/* Desktop - Show desktop nav, hide mobile button */
+@media (min-width: 769px) {
+  .nav-desktop {
+    display: flex;
+  }
+
+  .nav-menu-btn {
+    display: none;
+  }
+
+  .nav-apply-btn {
+    margin-left: auto;
+  }
+}
+
+/* Mobile - Show mobile button, hide desktop nav on smaller screens */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 20px;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
+}

@@ -1,0 +1,481 @@
+/* Import the Landing.css styles and add email section styles */
+@import url('../Landing.css');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* Override for home page - full screen, no padding */
+.home-page {
+  width: 100%;
+  height: 100vh;
+  padding-top: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Hide the top navigation on home page */
+.home-page ~ nav,
+body:has(.home-page) .nav-header {
+  display: none !important;
+}
+
+/* Top navigation container */
+.home-page .home-nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  z-index: 1001;
+}
+
+.home-page .home-nav-container {
+  display: flex;
+  width: 1110px;
+  height: 58px;
+  padding: 10px 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #F5F4F4;
+  border-radius: 8px;
+}
+
+/* Logo */
+.home-logo {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.home-logo-img {
+  height: 20px;
+  width: auto;
+}
+
+/* Get Discovered button */
+.home-get-discovered-btn {
+  display: flex;
+  padding: 12px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: #EBEAEA;
+  border: none;
+  color: #292929;
+  text-align: center;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 20px;
+}
+
+.home-get-discovered-btn:hover {
+  background: #D4D4D4;
+}
+
+/* Vertical Navigation on Left */
+.vertical-nav {
+  position: fixed;
+  left: 64px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.vertical-nav-item {
+  width: 48px;
+  height: 48px;
+  background: #EAE9E9;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.vertical-nav-item:hover {
+  background: #D4D4D4;
+  transform: translateY(-2px);
+}
+
+.nav-icon {
+  font-size: 20px;
+}
+
+.home-page .hero-background {
+  display: none;
+}
+
+/* Update hero to be full screen */
+.home-page .hero {
+  min-height: 100vh;
+  height: 100vh;
+  padding-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url('../assets/gradient-bottom.png');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% auto;
+  background-color: #F5F4F4;
+}
+
+/* Position hero container */
+.home-page .hero-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  padding-left: 169px;
+  padding-top: 181px;
+}
+
+/* Update hero background to fill entire viewport */
+.home-page .hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.home-page .hero-bg-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Update hero container */
+.home-page .hero-container {
+  min-height: auto;
+}
+
+.home-page .hero-right {
+  margin-top: -30px;
+}
+
+/* Left container - exact Figma specs */
+.home-page .hero-left {
+  display: flex;
+  width: 395px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 17px;
+}
+
+/* New left side text styles */
+.hero-text-new {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 148%;
+  letter-spacing: -0.18px;
+  color: #211E1E;
+  opacity: 0.7;
+  margin: 0;
+  align-self: stretch;
+}
+
+.hero-text-new em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero-text-new strong {
+  font-weight: 600;
+}
+
+/* Hero email form */
+.hero-email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  align-self: stretch;
+}
+
+.hero-email-input {
+  display: flex;
+  width: 368px;
+  padding: 10px 15px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: rgba(225, 224, 224, 0.50);
+  border: none;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  transition: border-color 0.2s ease;
+  text-transform: uppercase;
+}
+
+.hero-email-input::placeholder {
+  color: var(--gray-50);
+}
+
+.hero-email-input:focus {
+  outline: none;
+  background: rgba(225, 224, 224, 0.65);
+}
+
+.hero-email-btn {
+  display: flex;
+  padding: 12px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: #292929;
+  color: #F5F4F4;
+  border: none;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 100ms ease-out;
+  width: fit-content;
+}
+
+.hero-email-btn:hover:not(:disabled) {
+  background: #1a1a1a;
+}
+
+.hero-email-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hero-email-message {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  margin-top: 8px;
+}
+
+.hero-email-message.success {
+  color: var(--green-accent);
+}
+
+.hero-email-message.error {
+  color: #FF4444;
+}
+
+/* Note from founder text */
+.hero-note-text {
+  display: inline-flex;
+  padding: 1px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 145%;
+  letter-spacing: 0.22px;
+  text-transform: uppercase;
+  color: #171717;
+  opacity: 0.6;
+  margin: 0;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  transition: all 100ms ease-out;
+}
+
+.hero-note-text:hover {
+  opacity: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+/* Email Collection Section */
+.email-section {
+  width: 100%;
+  background: #FFF;
+  padding: 100px 0;
+  position: relative;
+}
+
+.email-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.email-heading {
+  font-family: 'Source Serif 4', serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -1.2px;
+  color: var(--accent);
+  text-align: center;
+  margin: 0;
+}
+
+.email-subheading {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.36px;
+  color: var(--accent);
+  text-align: center;
+  margin: 0;
+  max-width: 480px;
+}
+
+.email-form {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.email-input {
+  flex: 1;
+  padding: 14px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  border: 1.5px solid var(--gray-30);
+  border-radius: 8px;
+  background: #FFF;
+  color: var(--accent);
+  transition: border-color 0.2s ease;
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: var(--green-accent);
+}
+
+.email-input::placeholder {
+  color: var(--gray-50);
+}
+
+.email-submit-btn {
+  background: var(--accent);
+  color: #FCFCFC;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.email-submit-btn:hover:not(:disabled) {
+  background: #1a1a1a;
+  transform: translateY(-1px);
+}
+
+.email-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.email-message {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  margin-top: 8px;
+}
+
+.email-message-success {
+  color: var(--green-accent);
+}
+
+.email-message-error {
+  color: #FF4444;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .home-logo {
+    top: 24px;
+    left: 24px;
+  }
+
+  .home-logo-img {
+    height: 28px;
+  }
+
+  .home-get-discovered-btn {
+    top: 24px;
+    right: 24px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .vertical-nav {
+    left: 24px;
+    gap: 16px;
+  }
+
+  .vertical-nav-item {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-icon {
+    font-size: 18px;
+  }
+
+  .hero-text-new {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .hero-email-form {
+    max-width: 100%;
+  }
+
+  .home-page .hero-container {
+    padding: 0 24px 0 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .home-page .hero-left {
+    width: 100%;
+  }
+
+  .home-page .hero-right {
+    display: none;
+  }
+}

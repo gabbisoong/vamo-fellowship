@@ -5,6 +5,7 @@
 /* --- Font imports --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap');
 
 /* --- Root color variables --- */
 :root {
@@ -243,11 +244,11 @@ body {
   position: absolute;
   left: 0;
   top: 170px;
-  font-family: 'Source Serif 4', serif;
+  font-family: 'Cardo', serif;
   font-size: 42px;
   font-weight: 400;
   line-height: 110%;
-  letter-spacing: -3%;
+  letter-spacing: -0.84px;
   color: var(--accent);
   width: 70px;
 }
@@ -451,11 +452,11 @@ body {
 }
 
 .phrase {
-  font-family: 'Source Serif 4', serif;
+  font-family: 'Cardo', serif;
   font-size: 42px;
   font-weight: 400;
   line-height: 110%;
-  letter-spacing: -4%;
+  letter-spacing: -0.84px;
   color: var(--accent);
   position: relative;
   white-space: nowrap;

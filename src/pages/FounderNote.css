@@ -1,0 +1,247 @@
+/* Import base styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700&display=swap');
+
+/* Import shared styles from Landing.css */
+@import url('../Landing.css');
+
+.founder-note-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 70px;
+  background: var(--bg-color);
+}
+
+/* Hero Section */
+.founder-hero {
+  width: 100%;
+  background: linear-gradient(180deg, #F5F4F4 0%, #E7FEEF 100%);
+  padding: 120px 0 80px;
+  position: relative;
+}
+
+.founder-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+  text-align: center;
+}
+
+.founder-hero-title {
+  font-family: 'Source Serif 4', serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -2px;
+  color: var(--accent);
+  margin: 0;
+}
+
+/* Main Content Section */
+.founder-main-section {
+  width: 100%;
+  background: #FFF;
+  padding: 120px 0;
+}
+
+.founder-main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.founder-image-section {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.founder-main-photo {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.founder-story {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.founder-story-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 165%;
+  letter-spacing: -0.36px;
+  color: var(--accent);
+  margin: 0;
+}
+
+.founder-story-text strong {
+  font-weight: 700;
+}
+
+.founder-signature-section {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--gray-30);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.signature-img {
+  height: 40px;
+  width: auto;
+}
+
+.signature-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.signature-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.signature-role,
+.signature-mission {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  color: var(--accent);
+}
+
+.signature-role strong,
+.signature-mission strong {
+  font-weight: 600;
+}
+
+/* CTA Section */
+.founder-cta-section {
+  width: 100%;
+  background: linear-gradient(180deg, #F5F4F4 0%, #E7FEEF 100%);
+  padding: 100px 0;
+}
+
+.founder-cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.founder-cta-heading {
+  font-family: 'Source Serif 4', serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -1.44px;
+  color: var(--accent);
+  text-align: center;
+  margin: 0;
+}
+
+.founder-cta-subheading {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.4px;
+  color: var(--accent);
+  text-align: center;
+  margin: 0;
+}
+
+.btn-founder-cta {
+  background: var(--accent);
+  color: #FCFCFC;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-founder-cta:hover {
+  background: #1a1a1a;
+  transform: translateY(-1px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .founder-note-page {
+    padding-top: 70px;
+  }
+
+  .founder-hero {
+    padding: 80px 0 60px;
+  }
+
+  .founder-hero-container {
+    padding: 0 20px;
+  }
+
+  .founder-hero-title {
+    font-size: 36px;
+  }
+
+  .founder-main-section {
+    padding: 60px 0;
+  }
+
+  .founder-main-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .founder-image-section {
+    position: static;
+  }
+
+  .founder-main-photo {
+    max-width: 300px;
+  }
+
+  .founder-story-text {
+    font-size: 16px;
+  }
+
+  .founder-cta-section {
+    padding: 60px 20px;
+  }
+
+  .founder-cta-container {
+    padding: 0;
+  }
+
+  .founder-cta-heading {
+    font-size: 32px;
+  }
+
+  .founder-cta-subheading {
+    font-size: 18px;
+  }
+}
