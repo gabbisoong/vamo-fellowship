@@ -1,247 +1,200 @@
-/* Import base styles */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap');
 
-/* Import shared styles from Landing.css */
-@import url('../Landing.css');
-
-.founder-note-page {
-  width: 100%;
-  min-height: 100vh;
-  padding-top: 70px;
-  background: var(--bg-color);
-}
-
-/* Hero Section */
-.founder-hero {
-  width: 100%;
-  background: linear-gradient(180deg, #F5F4F4 0%, #E7FEEF 100%);
-  padding: 120px 0 80px;
-  position: relative;
-}
-
-.founder-hero-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 80px;
-  text-align: center;
-}
-
-.founder-hero-title {
-  font-family: 'Source Serif 4', serif;
-  font-size: 64px;
-  font-weight: 400;
-  line-height: 110%;
-  letter-spacing: -2px;
-  color: var(--accent);
-  margin: 0;
-}
-
-/* Main Content Section */
-.founder-main-section {
-  width: 100%;
-  background: #FFF;
-  padding: 120px 0;
-}
-
-.founder-main-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 80px;
-  display: grid;
-  grid-template-columns: 1fr 1.8fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.founder-image-section {
-  position: sticky;
-  top: 100px;
+/* Top nav — same as home page */
+.founder-page .home-nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  padding-top: 25px;
+  padding-bottom: 40px;
+  background: linear-gradient(180deg, rgba(245, 244, 244, 0.00) -44.05%, #F5F4F4 -8.04%, #F5F4F4 72.72%, rgba(245, 244, 244, 0.86) 77.76%, rgba(245, 244, 244, 0.00) 88.83%);
+  z-index: 1001;
 }
 
-.founder-main-photo {
+.founder-page .home-nav-container {
+  display: flex;
+  width: 1110px;
+  height: 58px;
+  padding: 10px 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #F5F4F4;
+  border-radius: 8px;
+}
+
+.founder-page {
   width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 12px;
-}
-
-.founder-story {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.founder-story-text {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 165%;
-  letter-spacing: -0.36px;
-  color: var(--accent);
-  margin: 0;
-}
-
-.founder-story-text strong {
-  font-weight: 700;
-}
-
-.founder-signature-section {
-  margin-top: 40px;
-  padding-top: 40px;
-  border-top: 1px solid var(--gray-30);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.signature-img {
-  height: 40px;
-  width: auto;
-}
-
-.signature-details {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.signature-name {
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--accent);
-}
-
-.signature-role,
-.signature-mission {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 140%;
-  color: var(--accent);
-}
-
-.signature-role strong,
-.signature-mission strong {
-  font-weight: 600;
-}
-
-/* CTA Section */
-.founder-cta-section {
-  width: 100%;
-  background: linear-gradient(180deg, #F5F4F4 0%, #E7FEEF 100%);
-  padding: 100px 0;
-}
-
-.founder-cta-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 80px;
+  min-height: 100vh;
+  padding-top: 110px;
+  background-color: #F5F4F4;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  position: relative;
+  padding-bottom: 291px;
 }
 
-.founder-cta-heading {
-  font-family: 'Source Serif 4', serif;
-  font-size: 48px;
+/* Film strip photo */
+.founder-photo-wrapper {
+  margin-top: 40px;
+  width: 800px;
+  height: auto;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.founder-photo {
+  width: 520px !important;
+  min-width: 520px;
+  height: auto;
+  display: block;
+}
+
+/* Letter card */
+.founder-card {
+  margin-top: 48px;
+  width: 528px;
+  height: auto;
+  padding: 67px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 63px;
+  border-radius: 6px;
+  border: 1.206px solid #EBEBEB;
+  background: linear-gradient(270deg, #F9F9F9 0%, #FFF 5.28%, #FFF 93.28%, #F9F9F9 100%);
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.06);
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.founder-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 145%;
+  letter-spacing: 0.22px;
+  text-transform: uppercase;
+  color: #171717;
+  opacity: 0.6;
+  margin: 0;
+  text-align: right;
+  align-self: stretch;
+}
+
+.founder-title {
+  font-family: 'Cardo', serif;
+  font-size: 26px;
+  font-style: normal;
   font-weight: 400;
   line-height: 110%;
-  letter-spacing: -1.44px;
-  color: var(--accent);
-  text-align: center;
+  letter-spacing: -0.65px;
+  color: #292929;
   margin: 0;
+  align-self: stretch;
 }
 
-.founder-cta-subheading {
-  font-family: 'Inter', sans-serif;
-  font-size: 20px;
+.founder-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-self: stretch;
+}
+
+.founder-body p {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  font-style: normal;
   font-weight: 400;
-  line-height: 150%;
-  letter-spacing: -0.4px;
-  color: var(--accent);
-  text-align: center;
+  line-height: 179%;
+  color: #171717;
+  opacity: 0.6;
   margin: 0;
 }
 
-.btn-founder-cta {
-  background: var(--accent);
-  color: #FCFCFC;
-  border: none;
-  padding: 16px 32px;
-  border-radius: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-top: 8px;
-  text-decoration: none;
+.founder-body p strong {
+  font-weight: 400;
+  opacity: 1;
+}
+
+/* Signature */
+.founder-signature {
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.founder-sig-name {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 145%;
+  letter-spacing: 0.22px;
+  text-transform: uppercase;
+  color: #171717;
+  opacity: 0.6;
+  margin: 0;
+}
+
+.founder-sig-role,
+.founder-sig-mission {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 145%;
+  letter-spacing: 0.22px;
+  text-transform: uppercase;
+  color: #171717;
+  opacity: 0.6;
+  margin: 0;
+}
+
+/* Apply button */
+.founder-apply-btn {
   display: inline-block;
+  background: #292929;
+  color: #fff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: background 0.2s ease;
 }
 
-.btn-founder-cta:hover {
-  background: #1a1a1a;
-  transform: translateY(-1px);
+.founder-apply-btn:hover {
+  background: #444;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .founder-note-page {
-    padding-top: 70px;
-  }
+/* Green gradient pinned to bottom */
+.founder-gradient-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 0;
+}
 
-  .founder-hero {
-    padding: 80px 0 60px;
-  }
-
-  .founder-hero-container {
-    padding: 0 20px;
-  }
-
-  .founder-hero-title {
-    font-size: 36px;
-  }
-
-  .founder-main-section {
-    padding: 60px 0;
-  }
-
-  .founder-main-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 0 20px;
-  }
-
-  .founder-image-section {
-    position: static;
-  }
-
-  .founder-main-photo {
-    max-width: 300px;
-  }
-
-  .founder-story-text {
-    font-size: 16px;
-  }
-
-  .founder-cta-section {
-    padding: 60px 20px;
-  }
-
-  .founder-cta-container {
-    padding: 0;
-  }
-
-  .founder-cta-heading {
-    font-size: 32px;
-  }
-
-  .founder-cta-subheading {
-    font-size: 18px;
-  }
+.founder-gradient-bottom img {
+  width: 100%;
+  display: block;
 }

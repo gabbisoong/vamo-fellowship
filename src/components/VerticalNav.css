@@ -1,0 +1,84 @@
+.vertical-nav {
+  position: fixed;
+  left: 59px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+  display: flex;
+  width: 40px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.vertical-nav-item {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-decoration: none;
+}
+
+.vertical-nav-item.nav-active {
+  background: #E3E2E2;
+}
+
+.vertical-nav-item:hover {
+  background: #E3E2E2;
+}
+
+.nav-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  opacity: 0.25;
+  transition: opacity 0.2s ease;
+}
+
+.nav-icon-product {
+  position: relative;
+  top: -2px;
+  left: 2px;
+  opacity: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.nav-icon-home {
+  width: 28px;
+  height: 27px;
+  object-fit: contain;
+}
+
+.nav-icon-founder {
+  width: 24px;
+  height: 26px;
+}
+
+.nav-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-red-dot {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #C0392B;
+}
+
+.vertical-nav-item.nav-active .nav-icon-img,
+.vertical-nav-item:hover .nav-icon-img {
+  opacity: 1;
+}

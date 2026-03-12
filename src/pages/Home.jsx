@@ -92,22 +92,6 @@ function Home() {
         </div>
       </div>
 
-      {/* Vertical Navigation Menu */}
-      <nav className="vertical-nav">
-        <Link to="/" className="vertical-nav-item">
-          {/* Placeholder for icon - will be replaced */}
-          <span className="nav-icon">✈</span>
-        </Link>
-        <Link to="/founder" className="vertical-nav-item">
-          {/* Placeholder for icon - will be replaced */}
-          <span className="nav-icon">📄</span>
-        </Link>
-        <Link to="/product" className="vertical-nav-item">
-          {/* Placeholder for icon - will be replaced */}
-          <span className="nav-icon">⋮⋮⋮</span>
-        </Link>
-      </nav>
-
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-background">
@@ -116,6 +100,10 @@ function Home() {
 
         <div className="hero-container">
           <div className="hero-left">
+            <a href="https://vamotalent.com/" target="_blank" rel="noreferrer" className="hero-badge">
+              CHECK OUT OUR FIRST PRODUCT: <span className="hero-badge-bold">VAMO TALENT</span>
+            </a>
+
             <div className="hero-description">
               <p className="hero-text-new">
                 Vamo is the largest network of <em>quiet geniuses</em> behind the next generation's <strong>$1M+ ideas.</strong>
@@ -142,7 +130,7 @@ function Home() {
               </p>
             )}
 
-            <p className="hero-note-text">A NOTE FROM THE FOUNDER</p>
+            <Link to="/founder" className="hero-note-text">A NOTE FROM THE FOUNDER</Link>
           </div>
 
           <div className="hero-right">
