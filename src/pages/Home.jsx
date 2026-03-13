@@ -24,16 +24,12 @@ function Home() {
   const [submitMessage, setSubmitMessage] = useState("");
 
   useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
-    if (isMobile) return;
-
     const updateOpacities = () => {
       if (!scrollContainerRef.current) return;
 
       const forLabel = document.querySelector('.phrase-label');
       if (!forLabel) return;
 
-      const container = scrollContainerRef.current;
       const forLabelRect = forLabel.getBoundingClientRect();
       const forCenterY = forLabelRect.top + forLabelRect.height / 2;
 

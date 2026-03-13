@@ -1,0 +1,176 @@
+/* MobileNav: hidden on desktop, visible on mobile */
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    background: #186132;
+  }
+
+  /* Green banner — extend into safe area on notched iPhones */
+  .mobile-nav-banner {
+    display: block;
+    width: 100%;
+    background: #186132;
+    color: #F5F4F4;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 145%;
+    letter-spacing: 0.24px;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 20px;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 12px);
+    box-sizing: border-box;
+  }
+
+  .mobile-nav-banner-bold {
+    font-weight: 600;
+  }
+
+  /* Hamburger + Logo row */
+  .mobile-nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 14px 20px;
+    background: #F5F4F4;
+  }
+
+  /* Hamburger button */
+  .mobile-nav-hamburger {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  .hamburger-line {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #292929;
+    border-radius: 1px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    transform-origin: center;
+  }
+
+  /* Hamburger -> X transformation */
+  .mobile-nav-hamburger.open .hamburger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .mobile-nav-hamburger.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-nav-hamburger.open .hamburger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* Centered logo */
+  .mobile-nav-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-nav-logo-img {
+    height: 20px;
+    width: auto;
+  }
+
+  /* Dropdown menu */
+  .mobile-nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 16px;
+    background: #F5F4F4;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1101;
+    min-width: 180px;
+    opacity: 0;
+    transform: translateY(-8px) scale(0.95);
+    transform-origin: top left;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .mobile-nav-dropdown.mobile-nav-dropdown-open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  /* Menu items */
+  .mobile-nav-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    text-decoration: none;
+    color: #292929;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.26px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+  }
+
+  .mobile-nav-menu-item:hover,
+  .mobile-nav-menu-item.mobile-nav-active {
+    background: #E3E2E2;
+  }
+
+  .mobile-nav-menu-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    opacity: 0.5;
+  }
+
+  .mobile-nav-menu-item.mobile-nav-active .mobile-nav-menu-icon,
+  .mobile-nav-menu-item:hover .mobile-nav-menu-icon {
+    opacity: 1;
+  }
+
+  .mobile-nav-icon-home {
+    width: 22px;
+    height: 22px;
+  }
+
+  .mobile-nav-icon-founder {
+    width: 20px;
+    height: 22px;
+  }
+
+  .mobile-nav-icon-product {
+    opacity: 1;
+  }
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import VerticalNav from "./components/VerticalNav";
+import MobileNav from "./components/MobileNav";
 import Home from "./pages/Home";
 import FounderNote from "./pages/FounderNote";
 import FirstProduct from "./pages/FirstProduct";
@@ -15,6 +16,7 @@ function AppContent() {
     <>
       {showTopNav && <Navigation />}
       <VerticalNav />
+      <MobileNav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/founder" element={<FounderNote />} />
