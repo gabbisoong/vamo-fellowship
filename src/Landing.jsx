@@ -31,15 +31,13 @@ function Landing() {
       const forLabel = document.querySelector('.phrase-label');
       if (!forLabel) return;
 
-      const container = scrollContainerRef.current;
-      const containerRect = container.getBoundingClientRect();
       const forLabelRect = forLabel.getBoundingClientRect();
       
       // Calculate the center Y position where "For" is located
       // We want phrases to align with the vertical center of "For" label
       const forCenterY = forLabelRect.top + forLabelRect.height / 2;
       
-      phraseRefs.current.forEach((phraseEl, index) => {
+      phraseRefs.current.forEach((phraseEl) => {
         if (!phraseEl) return;
         
         const phraseRect = phraseEl.getBoundingClientRect();

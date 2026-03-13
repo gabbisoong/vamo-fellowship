@@ -1,11 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import vamoLogo from "../assets/vamo-logo.svg";
 import founderPhoto from "../assets/vamo-bolun.png";
 import gradientBg from "../assets/gradient-bottom.png";
+import bolunSignature from "../assets/bolun-li-signature.svg";
 import "./FounderNote.css";
 
 function FounderNote() {
+  const [footerEmail, setFooterEmail] = useState("");
+
+  const handleFooterSubmit = (e) => {
+    e.preventDefault();
+    // Handle email submission
+    console.log("Footer email submitted:", footerEmail);
+    setFooterEmail("");
+  };
+
   return (
     <div className="founder-page">
 
@@ -32,18 +41,17 @@ function FounderNote() {
         <div className="founder-body">
           <p>Freshman year of college, I bet myself I'd buy a Ferrari before graduation. To win, I decided to start a company. That's how Zogo, the "Duolingo for financial literacy," was born.</p>
 
-          <p>I had no idea what I was doing — until a mentor named Scott saw potential in me and my idea and gave me $100k to make it happen.</p>
+          <p>I had no contacts, no product, just a powerpoint. But</p>
 
-          <p>But Scott didn't stop there — he set a challenge for me: sell his product to 10 customers in 3 months. It felt impossible. I had no contacts, no product, just a powerpoint. But to my surprise, I made it happen, and those first 10 customers changed <strong>everything</strong>.</p>
+          <p>Zogo's growth skyrocketed: 10 customers became 100, then 200. Eventually, Zogo was acquired for 8 figures in 2021 — just two months before graduation. I had won my bet.</p>
 
-          <p>Zogo's growth skyrocketed: 10 customers became 100, then 200. Eventually, Zogo was acquired for 8 figures in 2021 — just two months before graduation. I had won my bet, and it changed everything.</p>
-
-          <p>Now, I'm on a mission to give others the opportunity that Scott gave me — to <strong>support the next generation of entrepreneurs</strong>.</p>
+          <p>Now, I'm on a mission to give others the opportunity that Scott gave me — to support the next generation of quiet geniuses.</p>
         </div>
 
         <div className="founder-signature">
+          <img src={bolunSignature} alt="Bolun Li" className="founder-sig-name-img" />
           <p className="founder-sig-name">Bolun Li</p>
-          <p className="founder-sig-role">(Non-technical) Founder of <strong>Zogo</strong></p>
+          <p className="founder-sig-role">Non-technical Founder of Zogo</p>
           <p className="founder-sig-mission">Giving back with <strong>Vamo Fellowships</strong></p>
         </div>
 
@@ -55,6 +63,37 @@ function FounderNote() {
         >
           Apply now
         </a>
+      </div>
+
+      {/* Mobile footer (visible only on mobile via CSS) */}
+      <div className="founder-mobile-footer">
+        <div className="founder-footer-top">
+          <div className="founder-footer-info">
+            <img src={vamoLogo} alt="Vamo" className="founder-footer-logo" />
+            <div className="founder-footer-text">
+              <p className="founder-footer-company">BeWanted, Inc.</p>
+              <p className="founder-footer-copyright">&copy; 2026 All Rights Reserved.</p>
+            </div>
+          </div>
+          <form className="founder-footer-email-form" onSubmit={handleFooterSubmit}>
+            <input
+              type="email"
+              className="founder-footer-email-input"
+              placeholder="YOUR EMAIL"
+              value={footerEmail}
+              onChange={(e) => setFooterEmail(e.target.value)}
+              required
+            />
+            <button type="submit" className="founder-footer-email-btn" aria-label="Submit email">
+              &rarr;
+            </button>
+          </form>
+        </div>
+        <p className="founder-footer-socials">
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer">X</a>
+          {" \u00B7 "}
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </p>
       </div>
 
       {/* Green gradient bottom */}

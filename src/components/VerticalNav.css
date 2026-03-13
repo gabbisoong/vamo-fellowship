@@ -82,3 +82,10 @@
 .vertical-nav-item:hover .nav-icon-img {
   opacity: 1;
 }
+
+/* Mobile: hide vertical nav (replaced by MobileNav) */
+@media (max-width: 768px) {
+  .vertical-nav {
+    display: none;
+  }
+}
